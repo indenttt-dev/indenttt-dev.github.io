@@ -94,6 +94,7 @@
 html {
     scroll-behavior: smooth;
     scroll-padding-top: 70px;
+    overflow-x: hidden;
 }
 
 body {
@@ -102,6 +103,8 @@ body {
     line-height: 1.6;
     background: #edf2f7;
     -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+    max-width: 100vw;
 }
 
 a {
@@ -266,7 +269,7 @@ strong {
     display: flex;
     justify-content: center;
     font-size: .72rem;
-    letter-spacing: .14em;
+    letter-spacing: 1px;
     text-transform: uppercase;
     color: var(--ink-soft);
     border-bottom: 1px solid var(--rule);
@@ -278,10 +281,11 @@ strong {
     font-family: var(--f-georgia);
     font-weight: 700;
     font-size: clamp(1.04rem, 3.6vw, 2.85rem);
-    line-height: 1;
+    line-height: 1.15;
     color: var(--ink);
     letter-spacing: .01em;
-    white-space: nowrap;
+    white-space: normal;
+    word-break: break-word;
     max-width: 92%;
     margin: 0 auto;
 }
@@ -291,11 +295,11 @@ strong {
 }
 
 .masthead__sub {
-    font-size: .6em;
+    font-size: 1em;
     color: var(--ink-soft);
     letter-spacing: .08em;
     text-transform: uppercase;
-    vertical-align: middle;
+    vertical-align: baseline;
 }
 
 .masthead__rule {
@@ -374,8 +378,8 @@ strong {
 }
 
 .intro-line {
-    display: block;
-    white-space: nowrap;
+    display: inline;
+    white-space: normal;
 }
 
 .dropcap::first-letter {
@@ -1123,6 +1127,22 @@ strong {
 
     .activity__head {
         flex-wrap: wrap;
+    }
+
+    .lead__body {
+        max-width: 100%;
+    }
+
+    .sheet {
+        padding: 24px 16px 36px;
+    }
+
+    .listing__row {
+        grid-template-columns: auto 1fr auto;
+    }
+
+    .listing__dots {
+        display: none;
     }
 }
 
