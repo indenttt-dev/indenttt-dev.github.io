@@ -286,6 +286,18 @@ strong {
     margin: 0 auto;
 }
 
+.masthead__highlight {
+    color: var(--crimson);
+}
+
+.masthead__sub {
+    font-size: .6em;
+    color: var(--ink-soft);
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    vertical-align: middle;
+}
+
 .masthead__rule {
     display: flex;
     align-items: center;
@@ -456,12 +468,15 @@ strong {
 }
 
 .gz-btn--secondary {
-    background: rgba(210, 228, 245, .18);
+    background: #ffffff;
+    border-color: var(--paper-edge);
+    color: var(--ink);
 }
 
 .gz-btn--secondary:hover {
-    color: var(--crimson-deep);
-    background: rgba(210, 228, 245, .5);
+    color: var(--ink);
+    background: var(--paper-2);
+    border-color: #b8c8d8;
 }
 
 .gz-btn .icon {
