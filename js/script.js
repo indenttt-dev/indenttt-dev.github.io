@@ -9,6 +9,21 @@ document.addEventListener("DOMContentLoaded", function () {
     const navToggle = document.getElementById("navToggle");
     const navLinks = document.getElementById("navLinks");
     const navItems = navLinks.querySelectorAll("a");
+    const topbar = document.getElementById("topbar");
+
+    function setTopbarOffset() {
+        const topbarHeight = Math.ceil(topbar.getBoundingClientRect().height);
+
+        document.documentElement.style.setProperty("--topbar-height", topbarHeight + "px");
+        document.documentElement.style.setProperty("--anchor-offset", (topbarHeight + 20) + "px");
+    }
+
+    setTopbarOffset();
+    window.addEventListener("resize", setTopbarOffset);
+
+    if (document.fonts && document.fonts.ready) {
+        document.fonts.ready.then(setTopbarOffset);
+    }
 
     if (navItems.length > 0) {
         navItems[0].classList.add("is-active");
